@@ -1,8 +1,9 @@
+// start search input
 const PhoneSearchResult = () => {
     const inputText = document.getElementById('input-text');
     if(inputText.value == ''){
         const h2= document.getElementById('error-msg')
-        h2.innerText= 'Please Type your Phones name'
+        h2.innerText= 'Please Type your Phones name or smart wacth'
         // Mobile reviwe
 
         document.getElementById('displayResult').textContent='';
@@ -22,7 +23,7 @@ const PhoneSearchResult = () => {
 const mobileReviwe = phones => {
     if(phones.length == 0){
         const h2= document.getElementById('error-msg')
-        h2.innerText= 'Please Type your Search is not found this websites sorry....'
+        h2.innerText= 'Oh Opps!!!!!Please Type your Search is not found this websites sorry....'
         // Mobile reviwe
 
         document.getElementById('displayResult').textContent='';
