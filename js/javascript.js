@@ -10,7 +10,7 @@ const PhoneSearchResult = () => {
 const mobileReviwe = phones => {
     const displayResult = document.getElementById('displayResult')
     phones.forEach(phone => {
-        console.log(phone)
+        // console.log(phone)
         const div = document.createElement('div');
         div.classList.add('col-md-4');
         div.innerHTML = `
@@ -19,7 +19,7 @@ const mobileReviwe = phones => {
          <div class="card-body">
           <h5 class="card-title">name${phone.brand}}</h5>
           <h5 class="card-title">name${phone.phone_name}}</h5>
-          <a href="${phone.slug}" class="btn btn-primary">Details</a>
+          <a onclick="detailsAllPhone('${phone.slug}')" class="btn btn-primary">Details</a>
          </div>
         </div>`;
         displayResult.appendChild(div);
@@ -27,4 +27,12 @@ const mobileReviwe = phones => {
 
     });
 
+}
+
+const detailsAllPhone = phone =>{
+// console.log(phone)
+const url =`https://openapi.programming-hero.com/api/phone/${phone}`
+fetch(url)
+.then(res => res.json())
+.then(optimize => console.log(optimize))
 }
