@@ -34,5 +34,23 @@ const detailsAllPhone = phone =>{
 const url =`https://openapi.programming-hero.com/api/phone/${phone}`
 fetch(url)
 .then(res => res.json())
-.then(optimize => console.log(optimize))
+.then(optimize => showButton(optimize.data))
+}
+
+
+const showButton = mobile =>{
+   console.log(mobile)
+   const show=document.getElementById('showDetails')
+   const div = document.createElement('div');
+        div.classList.add('col-md-4');
+        div.innerHTML = `
+        <div class="card">
+          <img src="${mobile.mainfeature.img}" class="card-img-top" alt="...">
+         <div class="card-body">
+         <h5 class="card-title">name${phone.brand}}</h5>
+          <h5 class="card-title">name${mobile.Mainfeature.nam}}</h5>
+          <a onclick="detailsAllPhone('${phone.slug}')" class="btn btn-primary">Details</a>
+         </div>
+        </div>`;
+        show.appendChild(div);
 }
